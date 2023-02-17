@@ -46,9 +46,49 @@ format:
     - Made addition of new data types quite laborious
     - JavaScript expertise is relatively rare in our community
 - Work began in 2021 on defining the standard separately using a schema that 
-  - Multiple sprints involving the OpenNeuro team, NIMH Data Science and Sharing team, and others
-- Very nearly ready go live on OpenNeuro
+  - Three sprints to date involving the OpenNeuro team, NIMH Data Science and Sharing team, and others
 
+## Goals of the schema-based validator effort
+
+- Authoritative, machine-readable descriptions of BIDS concepts
+    - Reduce need for proliferation of implementations, such as the PyBIDS configuration object
+- Enforce consistency in specification by generating text and tables from schema
+    - Unify terms reused in multiple locations in the specification
+- Reduce burden of writing BEPs by eliminating the requirement for validator coding
+    - Consequence: Whether a rule can be encoded in the schema or will need custom code / schema expansion is now an informal review criterion.
+
+
+# What is the schema?
+
+:::: {.columns}
+::: {.column width="60%"}
+- A hierarchy of YAML documents in the specification repository, under src/schema.
+- Three major divisions:
+    - Objects (objects.*)
+      - Definitions of BIDS concepts like entities and terms like sidecar values
+    - Rules (rules.*)
+      - Validatable rules, such as entity ordering or permissible/required sidecar values
+    - Meta-schema (meta.*)
+      - Defines a "context" object to which rules can be applied
+      - Potentially expanded to any definitions or rules related to the schema itself
+
+:::
+::::
+
+![](./images/bids_schema.png){.absolute top="20%" left="60%" height="80%"}
+
+
+## Integrating the schema-based validator into OpenNeuro
+
+- Completed
+    - Schema based validation can be run server side by OpenNeuro’s dataset worker
+- Remaining
+    - Integration for client side (prior to upload) usage
+    - Port OpenNeuro CLI to new JavaScript runtime (Deno) to support calling the schema validator
+    - UI to control use of schema validator during upload
+    - Support for dual validation with existing and schema validators
+- Decisions
+    - How do we handle cases when one validator passes and the other fails (for early users)?
 
 ## Sharing of derivative datasets
 

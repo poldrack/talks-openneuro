@@ -11,7 +11,21 @@
     "href": "talk.html#schema-based-validation-for-bids",
     "title": "OpenNeuro: An open archive for analysis and sharing of BRAIN Initiative data",
     "section": "Schema-based validation for BIDS",
-    "text": "Schema-based validation for BIDS\n\nOpenNeuro data ingestion relies upon JavaScript BIDS validator\nOriginal validator built the standard structure directly into the validator code\n\nMade addition of new data types quite laborious\nJavaScript expertise is relatively rare in our community\n\nWork began in 2021 on defining the standard separately using a schema that\n\nMultiple sprints involving the OpenNeuro team, NIMH Data Science and Sharing team, and others\n\nVery nearly ready go live on OpenNeuro"
+    "text": "Schema-based validation for BIDS\n\nOpenNeuro data ingestion relies upon JavaScript BIDS validator\nOriginal validator built the standard structure directly into the validator code\n\nMade addition of new data types quite laborious\nJavaScript expertise is relatively rare in our community\n\nWork began in 2021 on defining the standard separately using a schema that\n\nThree sprints to date involving the OpenNeuro team, NIMH Data Science and Sharing team, and others"
+  },
+  {
+    "objectID": "talk.html#goals-of-the-schema-based-validator-effort",
+    "href": "talk.html#goals-of-the-schema-based-validator-effort",
+    "title": "OpenNeuro: An open archive for analysis and sharing of BRAIN Initiative data",
+    "section": "Goals of the schema-based validator effort",
+    "text": "Goals of the schema-based validator effort\n\nAuthoritative, machine-readable descriptions of BIDS concepts\n\nReduce need for proliferation of implementations, such as the PyBIDS configuration object\n\nEnforce consistency in specification by generating text and tables from schema\n\nUnify terms reused in multiple locations in the specification\n\nReduce burden of writing BEPs by eliminating the requirement for validator coding\n\nConsequence: Whether a rule can be encoded in the schema or will need custom code / schema expansion is now an informal review criterion."
+  },
+  {
+    "objectID": "talk.html#integrating-the-schema-based-validator-into-openneuro",
+    "href": "talk.html#integrating-the-schema-based-validator-into-openneuro",
+    "title": "OpenNeuro: An open archive for analysis and sharing of BRAIN Initiative data",
+    "section": "Integrating the schema-based validator into OpenNeuro",
+    "text": "Integrating the schema-based validator into OpenNeuro\n\nCompleted\n\nSchema based validation can be run server side by OpenNeuro’s dataset worker\n\nRemaining\n\nIntegration for client side (prior to upload) usage\nPort OpenNeuro CLI to new JavaScript runtime (Deno) to support calling the schema validator\nUI to control use of schema validator during upload\nSupport for dual validation with existing and schema validators\n\nDecisions\n\nHow do we handle cases when one validator passes and the other fails (for early users)?"
   },
   {
     "objectID": "talk.html#sharing-of-derivative-datasets",

@@ -376,9 +376,73 @@ Russ Poldrack
 </ul></li>
 <li>Work began in 2021 on defining the standard separately using a schema that
 <ul>
-<li>Multiple sprints involving the OpenNeuro team, NIMH Data Science and Sharing team, and others</li>
+<li>Three sprints to date involving the OpenNeuro team, NIMH Data Science and Sharing team, and others</li>
 </ul></li>
-<li>Very nearly ready go live on OpenNeuro</li>
+</ul>
+</section>
+<section id="goals-of-the-schema-based-validator-effort" class="slide level2">
+<h2>Goals of the schema-based validator effort</h2>
+<ul>
+<li>Authoritative, machine-readable descriptions of BIDS concepts
+<ul>
+<li>Reduce need for proliferation of implementations, such as the PyBIDS configuration object</li>
+</ul></li>
+<li>Enforce consistency in specification by generating text and tables from schema
+<ul>
+<li>Unify terms reused in multiple locations in the specification</li>
+</ul></li>
+<li>Reduce burden of writing BEPs by eliminating the requirement for validator coding
+<ul>
+<li>Consequence: Whether a rule can be encoded in the schema or will need custom code / schema expansion is now an informal review criterion.</li>
+</ul></li>
+</ul>
+</section>
+<section>
+<section id="what-is-the-schema" class="title-slide slide level1 center">
+<h1>What is the schema?</h1>
+<div class="columns">
+<div class="column" style="width:60%;">
+<ul>
+<li>A hierarchy of YAML documents in the specification repository, under src/schema.</li>
+<li>Three major divisions:
+<ul>
+<li>Objects (objects.*)
+<ul>
+<li>Definitions of BIDS concepts like entities and terms like sidecar values</li>
+</ul></li>
+<li>Rules (rules.*)
+<ul>
+<li>Validatable rules, such as entity ordering or permissible/required sidecar values</li>
+</ul></li>
+<li>Meta-schema (meta.*)
+<ul>
+<li>Defines a “context” object to which rules can be applied</li>
+<li>Potentially expanded to any definitions or rules related to the schema itself</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<p><img data-src="./images/bids_schema.png" class="absolute" style="top: 20%; left: 60%; height: 80%; "></p>
+</section>
+<section id="integrating-the-schema-based-validator-into-openneuro" class="slide level2">
+<h2>Integrating the schema-based validator into OpenNeuro</h2>
+<ul>
+<li>Completed
+<ul>
+<li>Schema based validation can be run server side by OpenNeuro’s dataset worker</li>
+</ul></li>
+<li>Remaining
+<ul>
+<li>Integration for client side (prior to upload) usage</li>
+<li>Port OpenNeuro CLI to new JavaScript runtime (Deno) to support calling the schema validator</li>
+<li>UI to control use of schema validator during upload</li>
+<li>Support for dual validation with existing and schema validators</li>
+</ul></li>
+<li>Decisions
+<ul>
+<li>How do we handle cases when one validator passes and the other fails (for early users)?</li>
+</ul></li>
 </ul>
 </section>
 <section id="sharing-of-derivative-datasets" class="slide level2">
@@ -480,7 +544,7 @@ Russ Poldrack
 <div class="footer footer-default">
 <p>https://poldrack.github.io/talks-openneuro/</p>
 </div>
-</section>
+</section></section>
     </div>
   </div>
 
