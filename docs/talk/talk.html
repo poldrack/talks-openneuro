@@ -5,12 +5,13 @@
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.2.269">
+  <meta name="generator" content="quarto-99.9.9">
 
   <meta name="author" content="Russ Poldrack">
-  <title>Talk template</title>
+  <title>OpenNeuro: An open archive for analysis and sharing of BRAIN Initiative data</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -326,7 +327,7 @@
     <div class="slides">
 
 <section id="title-slide" data-background-image="./images/stanford_background.jpg" data-background-opacity="0.5" class="quarto-title-block center">
-  <h1 class="title">Talk template</h1>
+  <h1 class="title">OpenNeuro: An open archive for analysis and sharing of BRAIN Initiative data</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -340,11 +341,144 @@ Russ Poldrack
 </div>
 
 </section>
-<section id="template-slide" class="slide level2">
-<h2>Template slide</h2>
+<section id="section" class="slide level2">
+<h2></h2>
+<p><img data-src="./images/openneuro_landing.png" class="absolute" style="top: 0%; left: 5%; height: 100%; "></p>
+</section>
+<section id="section-1" class="slide level2">
+<h2></h2>
+<p><img data-src="./images/combined_growth.png" class="absolute" style="top: 0%; left: 5%; height: 100%; "></p>
+</section>
+<section id="new-developments" class="slide level2">
+<h2>New developments</h2>
+<ul>
+<li>Renewal grant approved for funding (2023-2028)</li>
+<li>Migration from AWS to GCP
+<ul>
+<li>Improved performance, easier scaling, and lower cost per dataset</li>
+<li>Open datasets still shared via AWS Public Datasets</li>
+</ul></li>
+<li>Improved performance for large datasets (now handling 2TB+)</li>
+<li>Published data retention/admin policies for reference in Data Sharing Plans</li>
+<li>Links to NEMAR for supported datasets</li>
+<li>Initial support for ORCID integration</li>
+<li>Support for fNIRS upload</li>
+</ul>
+</section>
+<section id="schema-based-validation-for-bids" class="slide level2">
+<h2>Schema-based validation for BIDS</h2>
+<ul>
+<li>OpenNeuro data ingestion relies upon JavaScript BIDS validator</li>
+<li>Original validator built the standard structure directly into the validator code
+<ul>
+<li>Made addition of new data types quite laborious</li>
+<li>JavaScript expertise is relatively rare in our community</li>
+</ul></li>
+<li>Work began in 2021 on defining the standard separately using a schema that
+<ul>
+<li>Multiple sprints involving the OpenNeuro team, NIMH Data Science and Sharing team, and others</li>
+</ul></li>
+<li>Very nearly ready go live on OpenNeuro</li>
+</ul>
+</section>
+<section id="sharing-of-derivative-datasets" class="slide level2">
+<h2>Sharing of derivative datasets</h2>
+<ul>
+<li>Derivative data (e.g.&nbsp;preprocessed MRI data) are now supported through the BIDS-Derivatives extension (developed under BRAIN R24MH114705)</li>
+<li>One major motivation for the schema-based validator was to support the validation of derivative datasets</li>
+<li>In advance of this, we have been developing support for sharing of derivative datasets within OpenNeuro</li>
+</ul>
+</section>
+<section id="section-2" class="slide level2">
+<h2></h2>
+<p><img data-src="./images/derivatives_page.png" class="absolute" style="top: 0%; left: 5%; height: 100%; "></p>
+</section>
+<section id="preprocessingqc-of-openneuro-fmri-datasets" class="slide level2">
+<h2>Preprocessing/QC of OpenNeuro fMRI datasets</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<ul>
+<li>All human fMRI datasets from OpenNeuro are being run through MRIQC and fMRIPrep
+<ul>
+<li>Via a Pathways allocation on the TACC Frontera supercomputer</li>
+</ul></li>
+<li>To date:
+<ul>
+<li>229/430 datasets successfully run with MRIQC</li>
+<li>65/430 successfully preprocessed with fMRIPrep</li>
+</ul></li>
+<li>Derivatives openly available via S3 or Datalad</li>
+</ul>
+</div>
+</div>
+<p><img data-src="./images/derivatives_github.png" class="absolute" style="top: 10%; left: 40%; height: 80%; "></p>
+<div class="absolute" style="font-size: 1.25em; text-align: center;top: 90%; left: 42%; ">
+<p>https://github.com/OpenNeuroDerivatives</p>
+</div>
+</section>
+<section id="alignment-with-new-nih-data-sharing-policy" class="slide level2">
+<h2>Alignment with new NIH Data Sharing Policy</h2>
+<div class="absolute" style="font-size: 1.25em; text-align: left;top: 20%; left: 0%; ">
+<p>“we highlight the importance of researchers considering whether, in choosing where and how to make their data available (if not already specified by an FOA or funding NIH ICO expectation), access to scientific data derived from humans should be controlled, even if de-identified and lacking explicit limitations on subsequent use…SACHRP identified concerns regarding re-identification of otherwise de-identified data, and indeed technological advances and increasing interoperability among data resources, while providing opportunities for new analyses, present identifiability concerns that are widely acknowledged.”</p>
+</div>
+<div class="absolute" style="font-size: 1em; text-align: center;top: 90%; left: 0%; ">
+<p>Final NIH Policy for Data Management and Sharing (https://grants.nih.gov/grants/guide/notice-files/NOT-OD-21-013.html)</p>
+</div>
+</section>
+<section id="potential-solution" class="slide level2">
+<h2>Potential solution</h2>
+<ul>
+<li>We are considering adding a click-through agreement for all users requiring agreement to not attempt reidentification</li>
+<li>This would cause friction because automated download would require an API key for each user
+<ul>
+<li>vs.&nbsp;unauthenticated downloads from S3/datalad at present</li>
+</ul></li>
+</ul>
+</section>
+<section id="neuroethics-supplement" class="slide level2">
+<h2>Neuroethics supplement</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<ul>
+<li>A neuroethics supplement has supported Dr.&nbsp;Annie Jwa, a legal scholar with expertise in neuroethics</li>
+<li>Jwa &amp; Poldrack (2022, Journal of Law and the Biosciences) argued for development of regulatory protections against misuse of neuroscience data
+<ul>
+<li>“Neuroscience Information Non-discrimination Act”</li>
+</ul></li>
+<li>With funding from Stanford HAI, we are working with Sanmi Koyejo to examine potential for adversarial perturbations of structural MRI data to disable reidentification attempts</li>
+</ul>
+</div>
+</div>
+<p><img data-src="./images/jwa_paper.png" class="absolute" style="top: 10%; left: 50%; height: 90%; "></p>
+</section>
+<section id="section-3" class="slide level2">
+<h2></h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div style="text-align: center;font-size: 1.4em;fig-align: center">
+<p>The Poldrack Lab</p>
+</div>
+<div style="display: flex; justify-content: center;">
+<p><img data-src="./images/poldracklab_2022.png" height="400"></p>
+</div>
+<div style="text-align: center;font-size: 1.4em;fig-align: center">
+<p>Funding</p>
+</div>
+<p><img data-src="./images/brain_initiative_logo.png" height="150"> <img data-src="./images/nsf_logo.png" height="150"> <img data-src="./images/ljaf.png" height="150"> <img data-src="./images/NIH-NIMH-logo-new.png" height="150"></p>
+</div><div class="column" style="width:50%;">
+<div style="text-align: center;font-size: 1.4em;fig-align: center">
+<p>OpenNeuro Team</p>
+</div>
+<p><img data-src="./images/chris_g.png" height="200"> <img data-src="./images/nell.png" height="200"> <img data-src="./images/chris_m.png" height="200"> <img data-src="./images/ross.png" height="200"> <img data-src="./images/annie.png" height="200"> <img data-src="./images/mathias.png" height="200"> <img data-src="./images/oscar.png" height="200"></p>
+<div style="text-align: center;font-size: 1.4em;fig-align: center">
+<p>Collaborators</p>
+</div>
+<p><img data-src="./images/yarick.png" height="200"> <img data-src="./images/tal.png" height="200"> <img data-src="./images/satra.png" height="200"> <img data-src="./images/adam.jpg" height="200"></p>
+</div>
+</div>
 
 <div class="footer footer-default">
-<p>https://poldrack.github.io/talks-template/</p>
+<p>https://poldrack.github.io/talks-openneuro/</p>
 </div>
 </section>
     </div>
@@ -634,7 +768,7 @@ Russ Poldrack
           },
           interactive: true,
           interactiveBorder: 10,
-          theme: 'quarto-reveal',
+          theme: 'light-border',
           placement: 'bottom-start'
         };
           config['offset'] = [0,0];
