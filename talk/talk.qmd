@@ -23,7 +23,12 @@ format:
 
 ##  
 
-![](./images/combined_growth.png){.absolute top="0%" left="5%" height="100%"}
+![](./images/combined_growth.png){.absolute top="0%" left="5%" height="90%"}
+
+##  
+
+![](./images/s3_downloads.png){.absolute top="0%" left="10%" height="90%"}
+
 
 
 ## New developments
@@ -98,7 +103,7 @@ format:
 
 ##
 
-![](./images/derivatives_page.png){.absolute top="0%" left="5%" height="100%"}
+![](./images/derivatives_page.png){.absolute top="0%" left="5%" height="90%"}
 
 ## Preprocessing/QC of OpenNeuro fMRI datasets
 
@@ -113,10 +118,10 @@ format:
 :::
 ::::
 
-![](./images/derivatives_github.png){.absolute top="10%" left="40%" height="80%"}
+![](./images/derivatives_github.png){.absolute top="10%" left="40%" height="70%"}
 
 
-::: {.absolute top=90% left=42% style="font-size: 1.25em; text-align: center;"}
+::: {.absolute top=80% left=42% style="font-size: 1.25em; text-align: center;"}
 https://github.com/OpenNeuroDerivatives
 :::
 
@@ -126,7 +131,7 @@ https://github.com/OpenNeuroDerivatives
 "we highlight the importance of researchers considering whether, in choosing where and how to make their data available (if not already specified by an FOA or funding NIH ICO expectation), access to scientific data derived from humans should be controlled, even if de-identified and lacking explicit limitations on subsequent use...SACHRP identified concerns regarding re-identification of otherwise de-identified data, and indeed technological advances and increasing interoperability among data resources, while providing opportunities for new analyses, present identifiability concerns that are widely acknowledged."
 :::
 
-::: {.absolute top=90% left=0% style="font-size: 1em; text-align: center;"}
+::: {.absolute top=80% left=0% style="font-size: 1em; text-align: center;"}
 Final NIH Policy for Data Management and Sharing (https://grants.nih.gov/grants/guide/notice-files/NOT-OD-21-013.html)
 :::
 
