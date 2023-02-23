@@ -1,0 +1,72 @@
+[
+  {
+    "objectID": "talk.html#new-developments",
+    "href": "talk.html#new-developments",
+    "title": "OpenNeuro: An open archive for analysis and sharing of BRAIN Initiative data",
+    "section": "New developments",
+    "text": "New developments\n\nRenewal grant approved for funding (2023-2028)\nMigration from AWS to GCP\n\nImproved performance, easier scaling, and lower cost per dataset\nOpen datasets still shared via AWS Public Datasets\n\nImproved performance for large datasets (now handling 2TB+)\nPublished data retention/admin policies for reference in Data Sharing Plans\nLinks to NEMAR for supported datasets\nInitial support for ORCID integration\nSupport for fNIRS upload"
+  },
+  {
+    "objectID": "talk.html#schema-based-validation-for-bids",
+    "href": "talk.html#schema-based-validation-for-bids",
+    "title": "OpenNeuro: An open archive for analysis and sharing of BRAIN Initiative data",
+    "section": "Schema-based validation for BIDS",
+    "text": "Schema-based validation for BIDS\n\nOpenNeuro data ingestion relies upon JavaScript BIDS validator\nOriginal validator built the standard structure directly into the validator code\n\nMade addition of new data types quite laborious\nJavaScript expertise is relatively rare in our community\n\nWork began in 2021 on defining the standard separately using a schema that\n\nThree sprints to date involving the OpenNeuro team, NIMH Data Science and Sharing team, and others"
+  },
+  {
+    "objectID": "talk.html#goals-of-the-schema-based-validator-effort",
+    "href": "talk.html#goals-of-the-schema-based-validator-effort",
+    "title": "OpenNeuro: An open archive for analysis and sharing of BRAIN Initiative data",
+    "section": "Goals of the schema-based validator effort",
+    "text": "Goals of the schema-based validator effort\n\nAuthoritative, machine-readable descriptions of BIDS concepts\n\nReduce need for proliferation of implementations, such as the PyBIDS configuration object\n\nEnforce consistency in specification by generating text and tables from schema\n\nUnify terms reused in multiple locations in the specification\n\nReduce burden of writing BEPs by eliminating the requirement for validator coding\n\nConsequence: Whether a rule can be encoded in the schema or will need custom code / schema expansion is now an informal review criterion."
+  },
+  {
+    "objectID": "talk.html#integrating-the-schema-based-validator-into-openneuro",
+    "href": "talk.html#integrating-the-schema-based-validator-into-openneuro",
+    "title": "OpenNeuro: An open archive for analysis and sharing of BRAIN Initiative data",
+    "section": "Integrating the schema-based validator into OpenNeuro",
+    "text": "Integrating the schema-based validator into OpenNeuro\n\nCompleted\n\nSchema based validation can be run server side by OpenNeuro’s dataset worker\n\nRemaining\n\nIntegration for client side (prior to upload) usage\nPort OpenNeuro CLI to new JavaScript runtime (Deno) to support calling the schema validator\nUI to control use of schema validator during upload\nSupport for dual validation with existing and schema validators\n\nDecisions\n\nHow do we handle cases when one validator passes and the other fails (for early users)?"
+  },
+  {
+    "objectID": "talk.html#sharing-of-derivative-datasets",
+    "href": "talk.html#sharing-of-derivative-datasets",
+    "title": "OpenNeuro: An open archive for analysis and sharing of BRAIN Initiative data",
+    "section": "Sharing of derivative datasets",
+    "text": "Sharing of derivative datasets\n\nDerivative data (e.g. preprocessed MRI data) are now supported through the BIDS-Derivatives extension (developed under BRAIN R24MH114705)\nOne major motivation for the schema-based validator was to support the validation of derivative datasets\nIn advance of this, we have been developing support for sharing of derivative datasets within OpenNeuro"
+  },
+  {
+    "objectID": "talk.html#preprocessingqc-of-openneuro-fmri-datasets",
+    "href": "talk.html#preprocessingqc-of-openneuro-fmri-datasets",
+    "title": "OpenNeuro: An open archive for analysis and sharing of BRAIN Initiative data",
+    "section": "Preprocessing/QC of OpenNeuro fMRI datasets",
+    "text": "Preprocessing/QC of OpenNeuro fMRI datasets\n\n\n\nAll human fMRI datasets from OpenNeuro are being run through MRIQC and fMRIPrep\n\nVia a Pathways allocation on the TACC Frontera supercomputer\n\nTo date:\n\n229/430 datasets successfully run with MRIQC\n65/430 successfully preprocessed with fMRIPrep\n\nDerivatives openly available via S3 or Datalad\n\n\n\n\n\nhttps://github.com/OpenNeuroDerivatives"
+  },
+  {
+    "objectID": "talk.html#alignment-with-new-nih-data-sharing-policy",
+    "href": "talk.html#alignment-with-new-nih-data-sharing-policy",
+    "title": "OpenNeuro: An open archive for analysis and sharing of BRAIN Initiative data",
+    "section": "Alignment with new NIH Data Sharing Policy",
+    "text": "Alignment with new NIH Data Sharing Policy\n\n“we highlight the importance of researchers considering whether, in choosing where and how to make their data available (if not already specified by an FOA or funding NIH ICO expectation), access to scientific data derived from humans should be controlled, even if de-identified and lacking explicit limitations on subsequent use…SACHRP identified concerns regarding re-identification of otherwise de-identified data, and indeed technological advances and increasing interoperability among data resources, while providing opportunities for new analyses, present identifiability concerns that are widely acknowledged.”\n\n\nFinal NIH Policy for Data Management and Sharing (https://grants.nih.gov/grants/guide/notice-files/NOT-OD-21-013.html)"
+  },
+  {
+    "objectID": "talk.html#potential-solution",
+    "href": "talk.html#potential-solution",
+    "title": "OpenNeuro: An open archive for analysis and sharing of BRAIN Initiative data",
+    "section": "Potential solution",
+    "text": "Potential solution\n\nWe are considering adding a click-through agreement for all users requiring agreement to not attempt reidentification\nThis would cause friction because automated download would require an API key for each user\n\nvs. unauthenticated downloads from S3/datalad at present"
+  },
+  {
+    "objectID": "talk.html#neuroethics-supplement",
+    "href": "talk.html#neuroethics-supplement",
+    "title": "OpenNeuro: An open archive for analysis and sharing of BRAIN Initiative data",
+    "section": "Neuroethics supplement",
+    "text": "Neuroethics supplement\n\n\n\nA neuroethics supplement has supported Dr. Annie Jwa, a legal scholar with expertise in neuroethics\nJwa & Poldrack (2022, Journal of Law and the Biosciences) argued for development of regulatory protections against misuse of neuroscience data\n\n“Neuroscience Information Non-discrimination Act”\n\nWith funding from Stanford HAI, we are working with Sanmi Koyejo to examine potential for adversarial perturbations of structural MRI data to disable reidentification attempts"
+  },
+  {
+    "objectID": "talk.html#section-4",
+    "href": "talk.html#section-4",
+    "title": "OpenNeuro: An open archive for analysis and sharing of BRAIN Initiative data",
+    "section": "",
+    "text": "The Poldrack Lab\n\n\n\n\n\nFunding\n\n   \n\n\nOpenNeuro Team\n\n      \n\nCollaborators\n\n   \n\n\n\n\nhttps://poldrack.github.io/talks-openneuro/"
+  }
+]
