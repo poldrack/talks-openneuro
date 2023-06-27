@@ -1,5 +1,5 @@
 # This tag should match the release tag in Github
-TAG = "OpenNeuro_BrainMeeting_Feb_23_2023"
+TAG = "OpenNeuro_EAB_Jun_27_2023"
 
 all: render-talk push-talk render-pdf push-pdf render-site push-site
 

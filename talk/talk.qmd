@@ -1,5 +1,5 @@
 ---
-title: "OpenNeuro: An open archive for analysis and sharing of BRAIN Initiative data" 
+title: "OpenNeuro External Advisory Board Meeting 2023" 
 author: Russ Poldrack
 institute: Stanford University
 title-slide-attributes:
@@ -17,23 +17,36 @@ format:
     width: 1920
 ---
 
-##
 
-![](./images/openneuro_landing.png){.absolute top="0%" left="5%" height="100%"}
+##  Archive continues consistent growth
 
-##  
-
-![](./images/combined_growth.png){.absolute top="0%" left="5%" height="90%"}
-
-##  
-
-![](./images/s3_downloads.png){.absolute top="0%" left="10%" height="90%"}
+![](./images/combined_growth.png){.absolute top="10%" left="5%" height="80%"}
 
 
+##  Increased web traffic over time
 
-## New developments
+![](./images/openneuro_web_traffic.png){.absolute top="20%" left="5%" height="50%"}
 
-- Renewal grant approved for funding (2023-2028)
+##  Substantial direct download volume
+
+![](./images/s3_downloads.png){.absolute top="20%" left="10%" height="70%"}
+
+## New programmatic developments
+
+- NIH renewal grant approved for funding (2023-2028), awaiting NGA
+- Foundation gift from the Noyce Foundation for Women's Brain Health Initiative (2023-2025, w/ option for extension)
+- Seed grant from Stanford Insitute for Human-Centered AI (with Sanmi Koyejo) on AI risks to privacy
+- Planning to hire a full-time data curator (Joe Wexler, formerly part-time contractor)
+- Considering hiring an additional software developer
+
+## Women's Brain Health Initiative
+
+
+
+
+## New technical developments
+
+
 - Migration from AWS to GCP
     - Improved performance, easier scaling, and lower cost per dataset
     - Open datasets still shared via AWS Public Datasets
@@ -42,6 +55,130 @@ format:
 - Links to NEMAR for supported datasets
 - Initial support for ORCID integration
 - Support for fNIRS upload
+
+## Aims of renewal R24
+
+- Overall goal
+    - Maintain the current high level of usability and performance of the OpenNeuro web site, through ongoing refinement of the site architecture
+- Aim 1: Enhance utility for BRAIN Initiative projects
+    - Develop special landing page and support searching BRAIN Initiative datasets
+    - Allow custom data use agreements/sharing permissions for BRAIN Initiative investigators
+- Aim 2: Enhance findability of OpenNeuro datasets
+    - Improve metadata access
+- Aim 3: Enhance reusability of OpenNeuro datasets
+    - Support sharing of derivatives by users
+    - Provide standardized QA/preprocessed data
+    - Implement a Jupyterhub interface to OpenNeuro datasets (ala DANDI-hub)
+
+## Sharing of derivative datasets
+
+- Derivative data (e.g. preprocessed MRI data) are now supported through the BIDS-Derivatives extension (developed under BRAIN R24MH114705)
+- One major motivation for the schema-based validator was to support the validation of derivative datasets
+- In advance of this, we have been developing support for sharing of derivative datasets within OpenNeuro
+
+##
+
+![](./images/derivatives_page.png){.absolute top="0%" left="5%" height="90%"}
+
+## Preprocessing/QC of OpenNeuro fMRI datasets
+
+:::: {.columns}
+::: {.column width="40%"}
+- All human fMRI datasets from OpenNeuro are being run through MRIQC and fMRIPrep
+    - Via a Pathways allocation on the TACC Frontera supercomputer
+- To date:
+    - 229/430 datasets successfully run with MRIQC
+    - 65/430 successfully preprocessed with fMRIPrep
+- Derivatives openly available via S3 or Datalad
+:::
+::::
+
+![](./images/derivatives_github.png){.absolute top="10%" left="40%" height="70%"}
+
+
+::: {.absolute top=80% left=42% style="font-size: 1.25em; text-align: center;"}
+https://github.com/OpenNeuroDerivatives
+:::
+
+## Alignment with new NIH Data Sharing Policy
+
+::: {.absolute top=20% left=0% style="font-size: 1.25em; text-align: left;"}
+"we highlight the importance of researchers considering whether, in choosing where and how to make their data available (if not already specified by an FOA or funding NIH ICO expectation), access to scientific data derived from humans should be controlled, even if de-identified and lacking explicit limitations on subsequent use...SACHRP identified concerns regarding re-identification of otherwise de-identified data, and indeed technological advances and increasing interoperability among data resources, while providing opportunities for new analyses, present identifiability concerns that are widely acknowledged."
+:::
+
+::: {.absolute top=80% left=0% style="font-size: 1em; text-align: center;"}
+Final NIH Policy for Data Management and Sharing (https://grants.nih.gov/grants/guide/notice-files/NOT-OD-21-013.html)
+:::
+
+## Potential solution
+
+- We are considering adding a click-through agreement for all users requiring agreement to not attempt reidentification
+- This would cause friction because automated download would require an API key for each user
+    - vs. unauthenticated downloads from S3/datalad at present
+- Open questions:
+    - Should we move to an authentication method that is more traceable to individuals (e.g. ORCID)?  Or do we really want to be able to trace them?
+    - Does our agreement conflict with the CC0 licensing?
+
+## Neuroethics supplement
+
+:::: {.columns}
+::: {.column width="40%"}
+- A neuroethics supplement has supported Dr. Annie Jwa, a legal scholar with expertise in neuroethics
+- Jwa & Poldrack (2022, Journal of Law and the Biosciences) argued for development of regulatory protections against misuse of neuroscience data
+    - "Neuroscience Information Non-discrimination Act"
+- With seed grant funding from Stanford HAI, we are working with Sanmi Koyejo to examine potential for adversarial perturbations of structural MRI data to disable reidentification attempts
+:::
+::::
+
+![](./images/jwa_paper.png){.absolute top="10%" left="50%" height="90%"}
+
+##
+
+
+:::: {.columns}
+::: {.column width="50%"}
+<div style='text-align: center;font-size: 1.4em;fig-align: center'>
+The Poldrack Lab
+</div>
+<div style="display: flex; justify-content: center;">
+![](./images/poldracklab_2022.png){height="400px"}
+</div>
+
+<div style='text-align: center;font-size: 1.4em;fig-align: center'>
+Funding
+</div>
+![](./images/brain_initiative_logo.png){height="150px"}
+![](./images/nsf_logo.png){height="150px"}
+![](./images/ljaf.png){height="150px"}
+![](./images/NIH-NIMH-logo-new.png){height="150px"}
+![](./images/noyce-foundation.jpg){height="150px"}
+
+
+:::
+::: {.column width="50%"}
+
+<div style='text-align: center;font-size: 1.4em;fig-align: center'>
+OpenNeuro Team
+</div>
+
+![](./images/chris_g.png){height="200px"}
+![](./images/nell.png){height="200px"}
+![](./images/chris_m.png){height="200px"}
+![](./images/ross.png){height="200px"}
+![](./images/annie.png){height="200px"}
+![](./images/mathias.png){height="200px"}
+![](./images/oscar.png){height="200px"}
+
+<div style='text-align: center;font-size: 1.4em;fig-align: center'>
+Collaborators
+</div>
+![](./images/yarick.png){height="200px"}
+![](./images/tal.png){height="200px"}
+![](./images/satra.png){height="200px"}
+![](./images/adam.jpg){height="200px"}
+:::
+::::
+
 
 
 ## Schema-based validation for BIDS
@@ -94,108 +231,3 @@ format:
     - Support for dual validation with existing and schema validators
 - Decisions
     - How do we handle cases when one validator passes and the other fails (for early users)?
-
-## Sharing of derivative datasets
-
-- Derivative data (e.g. preprocessed MRI data) are now supported through the BIDS-Derivatives extension (developed under BRAIN R24MH114705)
-- One major motivation for the schema-based validator was to support the validation of derivative datasets
-- In advance of this, we have been developing support for sharing of derivative datasets within OpenNeuro
-
-##
-
-![](./images/derivatives_page.png){.absolute top="0%" left="5%" height="90%"}
-
-## Preprocessing/QC of OpenNeuro fMRI datasets
-
-:::: {.columns}
-::: {.column width="40%"}
-- All human fMRI datasets from OpenNeuro are being run through MRIQC and fMRIPrep
-    - Via a Pathways allocation on the TACC Frontera supercomputer
-- To date:
-    - 229/430 datasets successfully run with MRIQC
-    - 65/430 successfully preprocessed with fMRIPrep
-- Derivatives openly available via S3 or Datalad
-:::
-::::
-
-![](./images/derivatives_github.png){.absolute top="10%" left="40%" height="70%"}
-
-
-::: {.absolute top=80% left=42% style="font-size: 1.25em; text-align: center;"}
-https://github.com/OpenNeuroDerivatives
-:::
-
-## Alignment with new NIH Data Sharing Policy
-
-::: {.absolute top=20% left=0% style="font-size: 1.25em; text-align: left;"}
-"we highlight the importance of researchers considering whether, in choosing where and how to make their data available (if not already specified by an FOA or funding NIH ICO expectation), access to scientific data derived from humans should be controlled, even if de-identified and lacking explicit limitations on subsequent use...SACHRP identified concerns regarding re-identification of otherwise de-identified data, and indeed technological advances and increasing interoperability among data resources, while providing opportunities for new analyses, present identifiability concerns that are widely acknowledged."
-:::
-
-::: {.absolute top=80% left=0% style="font-size: 1em; text-align: center;"}
-Final NIH Policy for Data Management and Sharing (https://grants.nih.gov/grants/guide/notice-files/NOT-OD-21-013.html)
-:::
-
-## Potential solution
-
-- We are considering adding a click-through agreement for all users requiring agreement to not attempt reidentification
-- This would cause friction because automated download would require an API key for each user
-    - vs. unauthenticated downloads from S3/datalad at present
-
-## Neuroethics supplement
-
-:::: {.columns}
-::: {.column width="40%"}
-- A neuroethics supplement has supported Dr. Annie Jwa, a legal scholar with expertise in neuroethics
-- Jwa & Poldrack (2022, Journal of Law and the Biosciences) argued for development of regulatory protections against misuse of neuroscience data
-    - "Neuroscience Information Non-discrimination Act"
-- With funding from Stanford HAI, we are working with Sanmi Koyejo to examine potential for adversarial perturbations of structural MRI data to disable reidentification attempts
-:::
-::::
-
-![](./images/jwa_paper.png){.absolute top="10%" left="50%" height="90%"}
-
-##
-
-
-:::: {.columns}
-::: {.column width="50%"}
-<div style='text-align: center;font-size: 1.4em;fig-align: center'>
-The Poldrack Lab
-</div>
-<div style="display: flex; justify-content: center;">
-![](./images/poldracklab_2022.png){height="400px"}
-</div>
-
-<div style='text-align: center;font-size: 1.4em;fig-align: center'>
-Funding
-</div>
-![](./images/brain_initiative_logo.png){height="150px"}
-![](./images/nsf_logo.png){height="150px"}
-![](./images/ljaf.png){height="150px"}
-![](./images/NIH-NIMH-logo-new.png){height="150px"}
-
-
-:::
-::: {.column width="50%"}
-
-<div style='text-align: center;font-size: 1.4em;fig-align: center'>
-OpenNeuro Team
-</div>
-
-![](./images/chris_g.png){height="200px"}
-![](./images/nell.png){height="200px"}
-![](./images/chris_m.png){height="200px"}
-![](./images/ross.png){height="200px"}
-![](./images/annie.png){height="200px"}
-![](./images/mathias.png){height="200px"}
-![](./images/oscar.png){height="200px"}
-
-<div style='text-align: center;font-size: 1.4em;fig-align: center'>
-Collaborators
-</div>
-![](./images/yarick.png){height="200px"}
-![](./images/tal.png){height="200px"}
-![](./images/satra.png){height="200px"}
-![](./images/adam.jpg){height="200px"}
-:::
-::::
