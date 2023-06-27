@@ -1,131 +1,5 @@
 [
   {
-    "objectID": "talk.html#new-developments",
-    "href": "talk.html#new-developments",
-    "title": "OpenNeuro External Advisory Board Meeting 2023",
-    "section": "New developments",
-    "text": "New developments\n\nRenewal grant approved for funding (2023-2028), awaiting NGA\nMigration from AWS to GCP\n\nImproved performance, easier scaling, and lower cost per dataset\nOpen datasets still shared via AWS Public Datasets\n\nImproved performance for large datasets (now handling 2TB+)\nPublished data retention/admin policies for reference in Data Sharing Plans\nLinks to NEMAR for supported datasets\nInitial support for ORCID integration\nSupport for fNIRS upload"
-  },
-  {
-    "objectID": "talk.html#schema-based-validation-for-bids",
-    "href": "talk.html#schema-based-validation-for-bids",
-    "title": "OpenNeuro External Advisory Board Meeting 2023",
-    "section": "Schema-based validation for BIDS",
-    "text": "Schema-based validation for BIDS\n\nOpenNeuro data ingestion relies upon JavaScript BIDS validator\nOriginal validator built the standard structure directly into the validator code\n\nMade addition of new data types quite laborious\nJavaScript expertise is relatively rare in our community\n\nWork began in 2021 on defining the standard separately using a schema that\n\nThree sprints to date involving the OpenNeuro team, NIMH Data Science and Sharing team, and others"
-  },
-  {
-    "objectID": "talk.html#goals-of-the-schema-based-validator-effort",
-    "href": "talk.html#goals-of-the-schema-based-validator-effort",
-    "title": "OpenNeuro External Advisory Board Meeting 2023",
-    "section": "Goals of the schema-based validator effort",
-    "text": "Goals of the schema-based validator effort\n\nAuthoritative, machine-readable descriptions of BIDS concepts\n\nReduce need for proliferation of implementations, such as the PyBIDS configuration object\n\nEnforce consistency in specification by generating text and tables from schema\n\nUnify terms reused in multiple locations in the specification\n\nReduce burden of writing BEPs by eliminating the requirement for validator coding\n\nConsequence: Whether a rule can be encoded in the schema or will need custom code / schema expansion is now an informal review criterion."
-  },
-  {
-    "objectID": "talk.html#integrating-the-schema-based-validator-into-openneuro",
-    "href": "talk.html#integrating-the-schema-based-validator-into-openneuro",
-    "title": "OpenNeuro External Advisory Board Meeting 2023",
-    "section": "Integrating the schema-based validator into OpenNeuro",
-    "text": "Integrating the schema-based validator into OpenNeuro\n\nCompleted\n\nSchema based validation can be run server side by OpenNeuro’s dataset worker\n\nRemaining\n\nIntegration for client side (prior to upload) usage\nPort OpenNeuro CLI to new JavaScript runtime (Deno) to support calling the schema validator\nUI to control use of schema validator during upload\nSupport for dual validation with existing and schema validators\n\nDecisions\n\nHow do we handle cases when one validator passes and the other fails (for early users)?\n\n\n\n\nhttps://poldrack.github.io/talks-openneuro/"
-  },
-  {
-    "objectID": "talk.html#sharing-of-derivative-datasets",
-    "href": "talk.html#sharing-of-derivative-datasets",
-    "title": "OpenNeuro External Advisory Board Meeting 2023",
-    "section": "Sharing of derivative datasets",
-    "text": "Sharing of derivative datasets\n\nDerivative data (e.g. preprocessed MRI data) are now supported through the BIDS-Derivatives extension (developed under BRAIN R24MH114705)\nOne major motivation for the schema-based validator was to support the validation of derivative datasets\nIn advance of this, we have been developing support for sharing of derivative datasets within OpenNeuro"
-  },
-  {
-    "objectID": "talk.html#preprocessingqc-of-openneuro-fmri-datasets",
-    "href": "talk.html#preprocessingqc-of-openneuro-fmri-datasets",
-    "title": "OpenNeuro External Advisory Board Meeting 2023",
-    "section": "Preprocessing/QC of OpenNeuro fMRI datasets",
-    "text": "Preprocessing/QC of OpenNeuro fMRI datasets\n\n\n\nAll human fMRI datasets from OpenNeuro are being run through MRIQC and fMRIPrep\n\nVia a Pathways allocation on the TACC Frontera supercomputer\n\nTo date:\n\n229/430 datasets successfully run with MRIQC\n65/430 successfully preprocessed with fMRIPrep\n\nDerivatives openly available via S3 or Datalad\n\n\n\n\n\nhttps://github.com/OpenNeuroDerivatives"
-  },
-  {
-    "objectID": "talk.html#alignment-with-new-nih-data-sharing-policy",
-    "href": "talk.html#alignment-with-new-nih-data-sharing-policy",
-    "title": "OpenNeuro External Advisory Board Meeting 2023",
-    "section": "Alignment with new NIH Data Sharing Policy",
-    "text": "Alignment with new NIH Data Sharing Policy\n\n“we highlight the importance of researchers considering whether, in choosing where and how to make their data available (if not already specified by an FOA or funding NIH ICO expectation), access to scientific data derived from humans should be controlled, even if de-identified and lacking explicit limitations on subsequent use…SACHRP identified concerns regarding re-identification of otherwise de-identified data, and indeed technological advances and increasing interoperability among data resources, while providing opportunities for new analyses, present identifiability concerns that are widely acknowledged.”\n\n\nFinal NIH Policy for Data Management and Sharing (https://grants.nih.gov/grants/guide/notice-files/NOT-OD-21-013.html)"
-  },
-  {
-    "objectID": "talk.html#potential-solution",
-    "href": "talk.html#potential-solution",
-    "title": "OpenNeuro External Advisory Board Meeting 2023",
-    "section": "Potential solution",
-    "text": "Potential solution\n\nWe are considering adding a click-through agreement for all users requiring agreement to not attempt reidentification\nThis would cause friction because automated download would require an API key for each user\n\nvs. unauthenticated downloads from S3/datalad at present\n\nOpen questions:\n\nShould we move to an authentication method that is more traceable to individuals (e.g. ORCID)? Or do we really want to be able to trace them?\nDoes our agreement conflict with the CC0 licensing?"
-  },
-  {
-    "objectID": "talk.html#neuroethics-supplement",
-    "href": "talk.html#neuroethics-supplement",
-    "title": "OpenNeuro External Advisory Board Meeting 2023",
-    "section": "Neuroethics supplement",
-    "text": "Neuroethics supplement\n\n\n\nA neuroethics supplement has supported Dr. Annie Jwa, a legal scholar with expertise in neuroethics\nJwa & Poldrack (2022, Journal of Law and the Biosciences) argued for development of regulatory protections against misuse of neuroscience data\n\n“Neuroscience Information Non-discrimination Act”\n\nWith seed grant funding from Stanford HAI, we are working with Sanmi Koyejo to examine potential for adversarial perturbations of structural MRI data to disable reidentification attempts"
-  },
-  {
-    "objectID": "talk.html#section-4",
-    "href": "talk.html#section-4",
-    "title": "OpenNeuro: An open archive for analysis and sharing of BRAIN Initiative data",
-    "section": "",
-    "text": "The Poldrack Lab\n\n\n\n\n\nFunding\n\n   \n\n\nOpenNeuro Team\n\n      \n\nCollaborators\n\n   \n\n\n\n\nhttps://poldrack.github.io/talks-openneuro/"
-  },
-  {
-    "objectID": "talk.html#sustained-growth-of-the-archive",
-    "href": "talk.html#sustained-growth-of-the-archive",
-    "title": "OpenNeuro External Advisory Board Meeting 2023",
-    "section": "Sustained growth of the archive",
-    "text": "Sustained growth of the archive"
-  },
-  {
-    "objectID": "talk.html#web-traffic-over-time",
-    "href": "talk.html#web-traffic-over-time",
-    "title": "OpenNeuro External Advisory Board Meeting 2023",
-    "section": "Web traffic over time",
-    "text": "Web traffic over time"
-  },
-  {
-    "objectID": "talk.html#section-2",
-    "href": "talk.html#section-2",
-    "title": "OpenNeuro: An open archive for analysis and sharing of BRAIN Initiative data",
-    "section": "",
-    "text": "The Poldrack Lab\n\n\n\n\n\nFunding\n\n   \n\n\nOpenNeuro Team\n\n      \n\nCollaborators\n\n   \n\n\n\n\nhttps://poldrack.github.io/talks-openneuro/"
-  },
-  {
-    "objectID": "talk.html#download-volume",
-    "href": "talk.html#download-volume",
-    "title": "OpenNeuro: An open archive for analysis and sharing of BRAIN Initiative data",
-    "section": "Download volume",
-    "text": "Download volume"
-  },
-  {
-    "objectID": "talk.html#section-1",
-    "href": "talk.html#section-1",
-    "title": "OpenNeuro External Advisory Board Meeting 2023",
-    "section": "",
-    "text": "The Poldrack Lab\n\n\n\n\n\nFunding\n\n    \n\n\nOpenNeuro Team\n\n      \n\nCollaborators"
-  },
-  {
-    "objectID": "talk.html#s3-download-volume",
-    "href": "talk.html#s3-download-volume",
-    "title": "OpenNeuro External Advisory Board Meeting 2023",
-    "section": "S3 download volume",
-    "text": "S3 download volume"
-  },
-  {
-    "objectID": "talk.html#planning-for-the-next-5-years",
-    "href": "talk.html#planning-for-the-next-5-years",
-    "title": "OpenNeuro: An open archive for analysis and sharing of BRAIN Initiative data",
-    "section": "Planning for the next 5 years",
-    "text": "Planning for the next 5 years\n\nAim 1: Enhance utility for BRAIN Initiative projects\n\nDevelop special landing page and support searching BRAIN Initiative datasets\nAllow custom data use agreements/sharing permissions for BRAIN Initiative investigators\n\nAim 2: Enhance findability of OpenNeuro datasets\n\nImprove metadata access\n\nAim 3: Enhance reusability of OpenNeuro datasets\n\nSupport sharing of derivatives by users\nProvide standardized QA/preprocessed data\nImplement a Jupyterhub interface to OpenNeuro datasets (ala DANDI-hub)"
-  },
-  {
-    "objectID": "talk.html#aims-of-renewal-r24",
-    "href": "talk.html#aims-of-renewal-r24",
-    "title": "OpenNeuro External Advisory Board Meeting 2023",
-    "section": "Aims of renewal R24",
-    "text": "Aims of renewal R24\n\nOverall goal\n\nMaintain the current high level of usability and performance of the OpenNeuro web site, through ongoing refinement of the site architecture\n\nAim 1: Enhance utility for BRAIN Initiative projects\n\nDevelop special landing page and support searching BRAIN Initiative datasets\nAllow custom data use agreements/sharing permissions for BRAIN Initiative investigators\n\nAim 2: Enhance findability of OpenNeuro datasets\n\nImprove metadata access\n\nAim 3: Enhance reusability of OpenNeuro datasets\n\nSupport sharing of derivatives by users\nProvide standardized QA/preprocessed data\nImplement a Jupyterhub interface to OpenNeuro datasets (ala DANDI-hub)"
-  },
-  {
     "objectID": "talk.html#archive-continues-consistent-growth",
     "href": "talk.html#archive-continues-consistent-growth",
     "title": "OpenNeuro External Advisory Board Meeting 2023",
@@ -154,17 +28,94 @@
     "text": "New programmatic developments\n\nNIH renewal grant approved for funding (2023-2028), awaiting NGA\nFoundation gift from the Noyce Foundation for Women’s Brain Health Initiative (2023-2025, w/ option for extension)\nSeed grant from Stanford Insitute for Human-Centered AI (with Sanmi Koyejo) on AI risks to privacy\nPlanning to hire a full-time data curator (Joe Wexler, formerly part-time contractor)\nConsidering hiring an additional software developer"
   },
   {
-    "objectID": "talk.html#womens-brain-health-initiative",
-    "href": "talk.html#womens-brain-health-initiative",
-    "title": "OpenNeuro External Advisory Board Meeting 2023",
-    "section": "Women’s Brain Health Initiative",
-    "text": "Women’s Brain Health Initiative"
-  },
-  {
     "objectID": "talk.html#new-technical-developments",
     "href": "talk.html#new-technical-developments",
     "title": "OpenNeuro External Advisory Board Meeting 2023",
     "section": "New technical developments",
     "text": "New technical developments\n\nMigration from AWS to GCP\n\nImproved performance, easier scaling, and lower cost per dataset\nOpen datasets still shared via AWS Public Datasets\n\nImproved performance for large datasets (now handling 2TB+)\nPublished data retention/admin policies for reference in Data Sharing Plans\nLinks to NEMAR for supported datasets\nInitial support for ORCID integration\nSupport for fNIRS upload"
+  },
+  {
+    "objectID": "talk.html#aims-of-renewal-r24",
+    "href": "talk.html#aims-of-renewal-r24",
+    "title": "OpenNeuro External Advisory Board Meeting 2023",
+    "section": "Aims of renewal R24",
+    "text": "Aims of renewal R24\n\nOverall goal\n\nMaintain the current high level of usability and performance of the OpenNeuro web site, through ongoing refinement of the site architecture\n\nAim 1: Enhance utility for BRAIN Initiative projects\n\nDevelop special landing page and support searching BRAIN Initiative datasets\nAllow custom data use agreements/sharing permissions for BRAIN Initiative investigators\n\nAim 2: Enhance findability of OpenNeuro datasets\n\nImprove metadata access\n\nAim 3: Enhance reusability of OpenNeuro datasets\n\nSupport sharing of derivatives by users\nProvide standardized QA/preprocessed data\nImplement a Jupyterhub interface to OpenNeuro datasets (ala DANDI-hub)"
+  },
+  {
+    "objectID": "talk.html#sharing-of-derivative-datasets",
+    "href": "talk.html#sharing-of-derivative-datasets",
+    "title": "OpenNeuro External Advisory Board Meeting 2023",
+    "section": "Sharing of derivative datasets",
+    "text": "Sharing of derivative datasets\n\nDerivative data (e.g. preprocessed MRI data) are now supported through the BIDS-Derivatives extension (developed under BRAIN R24MH114705)\nOne major motivation for the schema-based validator was to support the validation of derivative datasets\nIn advance of this, we have been developing support for sharing of derivative datasets within OpenNeuro"
+  },
+  {
+    "objectID": "talk.html#preprocessingqc-of-openneuro-fmri-datasets",
+    "href": "talk.html#preprocessingqc-of-openneuro-fmri-datasets",
+    "title": "OpenNeuro External Advisory Board Meeting 2023",
+    "section": "Preprocessing/QC of OpenNeuro fMRI datasets",
+    "text": "Preprocessing/QC of OpenNeuro fMRI datasets\n\n\n\nAll human fMRI datasets from OpenNeuro are being run through MRIQC and fMRIPrep\n\nVia a Pathways allocation on the TACC Frontera supercomputer\n\nTo date:\n\n229/430 datasets successfully run with MRIQC\n65/430 successfully preprocessed with fMRIPrep\n\nDerivatives openly available via S3 or Datalad\n\n\n\n\n\nhttps://github.com/OpenNeuroDerivatives"
+  },
+  {
+    "objectID": "talk.html#emerging-issues",
+    "href": "talk.html#emerging-issues",
+    "title": "OpenNeuro External Advisory Board Meeting 2023",
+    "section": "Emerging issues",
+    "text": "Emerging issues\n\nDeidentification and privacy\nHosting of clinical/higher-risk data\nData use agreements"
+  },
+  {
+    "objectID": "talk.html#alignment-with-new-nih-data-sharing-policy",
+    "href": "talk.html#alignment-with-new-nih-data-sharing-policy",
+    "title": "OpenNeuro External Advisory Board Meeting 2023",
+    "section": "Alignment with new NIH Data Sharing Policy",
+    "text": "Alignment with new NIH Data Sharing Policy\n\n“we highlight the importance of researchers considering whether, in choosing where and how to make their data available (if not already specified by an FOA or funding NIH ICO expectation), access to scientific data derived from humans should be controlled, even if de-identified and lacking explicit limitations on subsequent use…SACHRP identified concerns regarding re-identification of otherwise de-identified data, and indeed technological advances and increasing interoperability among data resources, while providing opportunities for new analyses, present identifiability concerns that are widely acknowledged.”\n\n\nFinal NIH Policy for Data Management and Sharing (https://grants.nih.gov/grants/guide/notice-files/NOT-OD-21-013.html)"
+  },
+  {
+    "objectID": "talk.html#potential-solution",
+    "href": "talk.html#potential-solution",
+    "title": "OpenNeuro External Advisory Board Meeting 2023",
+    "section": "Potential solution",
+    "text": "Potential solution\n\nWe are considering adding a click-through agreement for all users requiring agreement to not attempt reidentification\nThis would cause friction because automated download would require an API key for each user\n\nvs. unauthenticated downloads from S3/datalad at present\n\nOpen questions:\n\nShould we move to an authentication method that is more traceable to individuals (e.g. ORCID)? Or do we really want to be able to trace them?\nDoes our agreement conflict with the CC0 licensing?"
+  },
+  {
+    "objectID": "talk.html#neuroethics-supplement",
+    "href": "talk.html#neuroethics-supplement",
+    "title": "OpenNeuro External Advisory Board Meeting 2023",
+    "section": "Neuroethics supplement",
+    "text": "Neuroethics supplement\n\n\n\nA neuroethics supplement has supported Dr. Annie Jwa, a legal scholar with expertise in neuroethics\nJwa & Poldrack (2022, Journal of Law and the Biosciences) argued for development of regulatory protections against misuse of neuroscience data\n\n“Neuroscience Information Non-discrimination Act”\n\nWith seed grant funding from Stanford HAI, we are working with Sanmi Koyejo to examine potential for adversarial perturbations of structural MRI data to disable reidentification attempts"
+  },
+  {
+    "objectID": "talk.html#hosting-clinical-data",
+    "href": "talk.html#hosting-clinical-data",
+    "title": "OpenNeuro External Advisory Board Meeting 2023",
+    "section": "Hosting clinical data",
+    "text": "Hosting clinical data\n\nShould we tell users not to upload clinical data given the potentially higher risk to subjects from breach of privacy?\nWe will be talking soon with ICPSR about potential use of OpenNeuro software for higher-risk data"
+  },
+  {
+    "objectID": "talk.html#section-1",
+    "href": "talk.html#section-1",
+    "title": "OpenNeuro External Advisory Board Meeting 2023",
+    "section": "",
+    "text": "The Poldrack Lab\n\n\n\n\n\nFunding\n\n    \n\n\nOpenNeuro Team\n\n       \n\nCollaborators"
+  },
+  {
+    "objectID": "talk.html#schema-based-validation-for-bids",
+    "href": "talk.html#schema-based-validation-for-bids",
+    "title": "OpenNeuro External Advisory Board Meeting 2023",
+    "section": "Schema-based validation for BIDS",
+    "text": "Schema-based validation for BIDS\n\nOpenNeuro data ingestion relies upon JavaScript BIDS validator\nOriginal validator built the standard structure directly into the validator code\n\nMade addition of new data types quite laborious\nJavaScript expertise is relatively rare in our community\n\nWork began in 2021 on defining the standard separately using a schema that\n\nThree sprints to date involving the OpenNeuro team, NIMH Data Science and Sharing team, and others"
+  },
+  {
+    "objectID": "talk.html#goals-of-the-schema-based-validator-effort",
+    "href": "talk.html#goals-of-the-schema-based-validator-effort",
+    "title": "OpenNeuro External Advisory Board Meeting 2023",
+    "section": "Goals of the schema-based validator effort",
+    "text": "Goals of the schema-based validator effort\n\nAuthoritative, machine-readable descriptions of BIDS concepts\n\nReduce need for proliferation of implementations, such as the PyBIDS configuration object\n\nEnforce consistency in specification by generating text and tables from schema\n\nUnify terms reused in multiple locations in the specification\n\nReduce burden of writing BEPs by eliminating the requirement for validator coding\n\nConsequence: Whether a rule can be encoded in the schema or will need custom code / schema expansion is now an informal review criterion."
+  },
+  {
+    "objectID": "talk.html#integrating-the-schema-based-validator-into-openneuro",
+    "href": "talk.html#integrating-the-schema-based-validator-into-openneuro",
+    "title": "OpenNeuro External Advisory Board Meeting 2023",
+    "section": "Integrating the schema-based validator into OpenNeuro",
+    "text": "Integrating the schema-based validator into OpenNeuro\n\nCompleted\n\nSchema based validation can be run server side by OpenNeuro’s dataset worker\n\nRemaining\n\nIntegration for client side (prior to upload) usage\nPort OpenNeuro CLI to new JavaScript runtime (Deno) to support calling the schema validator\nUI to control use of schema validator during upload\nSupport for dual validation with existing and schema validators\n\nDecisions\n\nHow do we handle cases when one validator passes and the other fails (for early users)?\n\n\n\n\nhttps://poldrack.github.io/talks-openneuro/"
   }
 ]

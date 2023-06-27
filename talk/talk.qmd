@@ -39,9 +39,6 @@ format:
 - Planning to hire a full-time data curator (Joe Wexler, formerly part-time contractor)
 - Considering hiring an additional software developer
 
-## Women's Brain Health Initiative
-
-
 
 
 ## New technical developments
@@ -100,6 +97,12 @@ format:
 https://github.com/OpenNeuroDerivatives
 :::
 
+## Emerging issues
+
+- Deidentification and privacy
+- Hosting of clinical/higher-risk data
+- Data use agreements
+
 ## Alignment with new NIH Data Sharing Policy
 
 ::: {.absolute top=20% left=0% style="font-size: 1.25em; text-align: left;"}
@@ -131,6 +134,13 @@ Final NIH Policy for Data Management and Sharing (https://grants.nih.gov/grants/
 ::::
 
 ![](./images/jwa_paper.png){.absolute top="10%" left="50%" height="90%"}
+
+
+## Hosting clinical data
+
+- Should we tell users not to upload clinical data given the potentially higher risk to subjects from breach of privacy?
+- We will be talking soon with ICPSR about potential use of OpenNeuro software for higher-risk data
+
 
 ##
 
@@ -168,6 +178,8 @@ OpenNeuro Team
 ![](./images/annie.png){height="200px"}
 ![](./images/mathias.png){height="200px"}
 ![](./images/oscar.png){height="200px"}
+![](./images/joshua-buckholtz-square1664235467358.jpg){height="200px"}
+
 
 <div style='text-align: center;font-size: 1.4em;fig-align: center'>
 Collaborators
